@@ -3,7 +3,7 @@ import '../build/styles.css';
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import calculateApp from './reducers/index';
 import App from './components/App';
 
@@ -14,7 +14,14 @@ const localStore = store => next => action => {
 };
 
 const data = JSON.parse(localStorage.getItem('recalculator')) || { items: [], lastResult: 0 },
-  store = createStore(calculateApp, data, applyMiddleware(localStore));
+  store = createStore(
+    calculateApp,
+    data,
+    compose(
+      applyMiddleware(localStore),
+      window.devToolsExtension ? window.devToolsExtension() : f => f
+    )
+  );
 
 render(
   <Provider store={store}>
