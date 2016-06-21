@@ -1,0 +1,11 @@
+.btn + .btn {
+    margin-left: 5px;
+}
+
+.form-control {
+  margin-right: 5px;
+}
+
+.list-group {
+    margin: 10px 0;
+}
