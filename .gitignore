@@ -1,4 +1,9 @@
 *~
 node_modules
-browser-bundle.js
-browser-bundle.js.map
+bundle.js
+bundle.js.map
+*.woff2
+*.svg
+*.ttf
+*.eot
+*.woff
