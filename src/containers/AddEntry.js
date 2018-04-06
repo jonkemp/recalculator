@@ -1,10 +1,11 @@
 import { connect } from 'react-redux';
-import { addEntry, updateResult } from '../actions/index';
+import { addEntry, updateResult, updateExpression } from '../actions/index';
 import EntryForm from '../components/EntryForm';
 
 const mapStateToProps = (state) => {
   return {
-    result: state.lastResult
+    result: state.lastResult,
+    expression: state.lastExpression
   }
 };
 
@@ -14,8 +15,12 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(addEntry(value));
     },
 
-    change: (value) => {
+    updateResult: (value) => {
       dispatch(updateResult(value));
+    },
+
+    updateExpression: (value) => {
+      dispatch(updateExpression(value));
     }
   }
 }

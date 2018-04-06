@@ -1,4 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.css';
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
@@ -12,7 +11,7 @@ const localStore = store => next => action => {
   return result;
 };
 
-const data = JSON.parse(localStorage.getItem('recalculator')) || { items: [], lastResult: 0 },
+const data = JSON.parse(localStorage.getItem('recalculator')) || { items: [], lastResult: 0, lastExpression: '' },
   store = createStore(
     calculateApp,
     data,

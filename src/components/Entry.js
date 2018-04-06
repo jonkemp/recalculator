@@ -1,28 +1,23 @@
-import React, { PropTypes } from 'react';
-import PubSub from 'pubsub-js';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const Entry = React.createClass({
-  render() {
-    return (
-      <li className="list-group-item">
-        <div>{this.props.result}</div>
-        <div>{this.props.expression}</div>
-        <button className="btn btn-warning btn-xs" type="button" onClick={() => {
-          PubSub.publish('entry', this.props.result);
-        }}>Use Result</button>
-        <button className="btn btn-warning btn-xs" type="button" onClick={() => {
-          PubSub.publish('entry', this.props.expression);
-        }}>Use Expression</button>
-        <button className="btn btn-danger btn-xs" type="button" onClick={this.props.remove}>Remove</button>
-      </li>
-    )
-  }
-});
+
+const Entry = ({ result, expression, remove, updateResult, updateExpression }) => (
+  <li className="list-group-item">
+    <div>{result}</div>
+    <div>{expression}</div>
+    <button className="btn btn-warning btn-xs" type="button" onClick={updateResult}>Use Result</button>
+    <button className="btn btn-warning btn-xs" type="button" onClick={updateExpression}>Use Expression</button>
+    <button className="btn btn-danger btn-xs" type="button" onClick={remove}>Remove</button>
+  </li>
+)
 
 Entry.propTypes = {
   expression: PropTypes.string.isRequired,
   result: PropTypes.number.isRequired,
-  remove: PropTypes.func.isRequired
+  remove: PropTypes.func.isRequired,
+  updateResult: PropTypes.func.isRequired,
+  updateExpression: PropTypes.func.isRequired
 }
 
 export default Entry;

@@ -8,6 +8,8 @@ export const REMOVE_ENTRY = 'REMOVE_ENTRY';
 
 export const UPDATE_RESULT = 'UPDATE_RESULT';
 
+export const UPDATE_EXPRESSION = 'UPDATE_EXPRESSION';
+
 /*
  * action creators
  */
@@ -22,4 +24,8 @@ export function removeEntry(index) {
 
 export function updateResult(result) {
   return { type: UPDATE_RESULT, result };
+}
+
+export function updateExpression(expression) {
+  return { type: UPDATE_EXPRESSION, expression };
 }

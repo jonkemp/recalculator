@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { removeEntry } from '../actions';
+import { removeEntry, updateExpression } from '../actions';
 import EntryList from '../components/EntryList';
 
 const mapStateToProps = (state) => {
@@ -12,6 +12,10 @@ const mapDispatchToProps = (dispatch) => {
   return {
     remove: (index) => {
       dispatch(removeEntry(index));
+    },
+
+    updateExpression: (value) => {
+      dispatch(updateExpression(value));
     }
   }
 }
