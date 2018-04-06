@@ -2,7 +2,7 @@
   "name": "recalculator",
   "version": "1.0.0",
   "description": "This is an example app built with React and Redux.",
-  "main": "app/main.js",
+  "main": "src/index.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -11,7 +11,7 @@
   },
   "repository": "jonkemp/recalculator",
   "author": "Jonathan Kemp <kempdogg@gmail.com> (http://jonkemp.com/)",
-  "license": "BSD-2-Clause",
+  "license": "MIT",
   "dependencies": {
     "react": "16.3.1",
     "react-dom": "16.3.1",
