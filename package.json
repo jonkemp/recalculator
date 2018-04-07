@@ -1,6 +1,6 @@
 {
   "name": "recalculator",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "This is an example app built with React and Redux.",
   "main": "src/index.js",
   "scripts": {
