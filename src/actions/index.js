@@ -15,17 +15,29 @@ export const UPDATE_EXPRESSION = 'UPDATE_EXPRESSION';
  */
 
 export function addEntry(text) {
-  return { type: ADD_ENTRY, text };
+  return {
+    type: ADD_ENTRY,
+    text
+  };
 }
 
 export function removeEntry(index) {
-  return { type: REMOVE_ENTRY, index };
+  return {
+    type: REMOVE_ENTRY,
+    index
+  };
 }
 
 export function updateResult(result) {
-  return { type: UPDATE_RESULT, result };
+  return {
+    type: UPDATE_RESULT,
+    result
+  };
 }
 
 export function updateExpression(expression) {
-  return { type: UPDATE_EXPRESSION, expression };
+  return {
+    type: UPDATE_EXPRESSION,
+    expression
+  };
 }
