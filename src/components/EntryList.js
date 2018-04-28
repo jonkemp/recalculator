@@ -5,19 +5,21 @@ import Entry from './Entry';
 
 const EntryList = ({ items, remove, updateExpression }) => (
   <div className="row">
-    <ul className="list-group">
-      {items.map((item, index) => {
-        return (
-          <Entry 
-            key={item.id} 
-            {...item} 
-            remove={() => remove(index)} 
-            updateResult={() => updateExpression(String(item.result))}
-            updateExpression={() => updateExpression(item.expression)} 
-          />
-        );
-      })}
-    </ul>
+    <div className="col">
+      <ul className="list-group">
+        {items.map((item, index) => {
+          return (
+            <Entry 
+              key={item.id} 
+              {...item} 
+              remove={() => remove(index)} 
+              updateResult={() => updateExpression(String(item.result))}
+              updateExpression={() => updateExpression(item.expression)} 
+            />
+          );
+        })}
+      </ul>
+    </div>
   </div>
 )
 

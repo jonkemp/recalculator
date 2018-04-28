@@ -45,15 +45,16 @@ class EntryForm extends React.Component {
 
   render() {
     return (
-      <div className="row">
-        <h3>Recalculator</h3>
-        <h1>{this.props.result} <button className="btn btn-success" type="button" onClick={this.updateExpression}><span className="glyphicon glyphicon-arrow-down" aria-hidden="true"></span></button></h1>
-        <form className="form-inline" onSubmit={this.handleSubmit}>
-          <div className="form-group">
-            <input className="form-control" type="text" value={this.props.expression} onChange={this.handleChange} />
-          </div>
-          <button className="btn btn-primary" type="submit">Submit</button>
-        </form>
+      <div className="row mb-3">
+        <div className="col">
+          <h1>{this.props.result} <button className="btn btn-success" type="button" onClick={this.updateExpression}>↓</button></h1>
+          <form className="form-inline" onSubmit={this.handleSubmit}>
+            <div className="input-group mb-2 mr-sm-2">
+              <input className="form-control" type="text" value={this.props.expression} onChange={this.handleChange} />
+            </div>
+            <button className="btn btn-primary mb-2" type="submit">Submit</button>
+          </form>
+        </div>
       </div>
     );
   }
